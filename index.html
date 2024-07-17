@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>magichands</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        .navbar .brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+            padding-left: 10px;
+        }
+
+        .navbar .brand img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-left: auto;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                position: relative;
+            }
+
+            .navbar-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #333;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                z-index: 10;
+            }
+
+            .navbar-menu.active {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+
+            .navbar-menu li {
+                margin-bottom: 10px;
+            }
+
+            .slideshow-container {
+                max-width: 100%;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+
+            .slideshow-container img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        /* Desktop view */
+        @media (min-width: 769px) {
+            .slideshow-container {
+                position: relative;
+                max-width: 500px;
+                margin: 0 auto;
+                overflow: hidden;
+                background-color: #ddd;
+            }
+
+            .slideshow-container img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        /* Slideshow styles */
+        .mySlides {
+            display: none;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            /*user-select: none;*/
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Dots/bullets */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar bg-gray-800 text-white py-4">
+        <div class="container mx-auto flex items-center">
+            <div class="brand">
+                <img src="logo.jpeg" alt="Magic Hands Logo">
+                <h2 class="text-lg font-semibold">Magic Hands</h2>
+            </div>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                &#9776;
+            </div>
+            <ul class="navbar-menu flex space-x-4" id="navbarMenu">
+                <li><a href="appointment.html" class="text-gray-300">Appointment</a></li>
+                <li><a href="styles.html" class="text-gray-300">Styles</a></li>
+                <li><a href="connect.html" class="text-gray-300">Contact</a></li>
+                <li><a href="prices.html" class="text-gray-300">Prices</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Rutuja Kudtarkar Introduction Section -->
+    <div class="container mx-auto my-8">
+        <div class="flex flex-col items-center mb-8 bg-white p-8 rounded-lg shadow-md">
+            <img src="idk.jpeg" alt="Your Image" class="rounded-full h-32 w-32 mb-4 border-4 border-gray-300">
+            <h3 class="text-2xl font-semibold">Your Name</h3>
+            <p class="text-gray-600 mb-4">Skilled Mehndi Designer</p>
+            <p class="text-gray-800 text-center max-w-prose">I am a renowned mehndi designer known for my exquisite and intricate henna artistry.</p>
+        </div>
+    </div>
+
+    <!-- Skills and Specialties Section -->
+    <div class="container mx-auto my-8">
+        <div class="flex flex-col items-center mb-8 bg-white p-8 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold">Skills and Specialties</h3>
+            <p class="text-gray-800 text-center max-w-prose">I specialize in a variety of mehndi styles, including bridal, Arabic, and Indo-Arabic, creating beautiful and detailed designs that enhance special occasions.</p>
+        </div>
+    </div>
+
+    <!-- Design Philosophy Section -->
+    <div class="container mx-auto my-8">
+        <div class="flex flex-col items-center mb-8 bg-white p-8 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold">Design Philosophy</h3>
+            <p class="text-gray-800 text-center max-w-prose">My work is celebrated for its creativity, precision, and the ability to blend traditional and contemporary elements seamlessly.</p>
+        </div>
+    </div>
+
+    <!-- Book an Appointment Button -->
+    <div class="container mx-auto my-8 text-center">
+        <a href="appointment.html" class="bg-blue-500 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">Book an Appointment</a>
+    </div>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container mx-auto mb-8 relative">
+        <div class="mySlides fade">
+            <img src="image1.jpeg" alt="Magic Hands 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="image2.jpeg" alt="Magic Hands 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="image3.jpeg" alt="Magic Hands 3">
+        </div>
+        <div class="mySlides fade">
+            <img src="image4.jpeg" alt="Magic Hands 4">
+        </div>
+        <div class="mySlides fade">
+            <img src="image5.jpeg" alt="Magic Hands 5">
+        </div>
+
+        <!-- Navigation arrows -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <!-- Dots/bullets for slideshow -->
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+    </div>
+
+    <!-- Client Testimonials Section -->
+    <div class="container mx-auto my-8">
+        <h2 class="text-2xl font-semibold mb-4">Feedback from Our Customers</h2>
+        <div id="feedbackContainer" class="space-y-4">
+            <!-- Feedback will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+        // Toggle mobile menu
+        function toggleMenu() {
+            const navbarMenu = document.getElementById('navbarMenu');
+            navbarMenu.classList.toggle('active');
+        }
+
+        // Navigate slides
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        // Simulated initial feedback data
+        document.addEventListener('DOMContentLoaded', function () {
+            const feedbackData = [
+                {
+                    name: 'Idk',
+                    email: 'idk@gmail.com',
+                    rating: '5',
+                    feedback: 'Excellent mehndi designs! Loved the designs and the patterns.'
+                },
+                {
+                    name: 'unknown',
+                    email: 'idk@gmail.com',
+                    rating: '4',
+                    feedback: 'Great service and beautiful designs.'
+                }
+                // Add more feedback items as needed
+            ];
+
+            const feedbackContainer = document.getElementById('feedbackContainer');
+
+            // Display initial feedback data
+            feedbackData.forEach(function (feedbackItem) {
+                const newFeedback = document.createElement('div');
+                newFeedback.classList.add('border', 'rounded-lg', 'p-4', 'mb-4', 'bg-white', 'shadow-md');
+                newFeedback.innerHTML = `
+                    <h3 class="text-xl font-semibold">${feedbackItem.name}</h3>
+                    <p class="text-gray-600 mb-2">${feedbackItem.email}</p>
+                    <div class="flex items-center mb-2">
+                        <span class="text-yellow-500">${'★'.repeat(parseInt(feedbackItem.rating))}</span>
+                        <span class="text-gray-400 ml-2">${'★'.repeat(5 - parseInt(feedbackItem.rating))}</span>
+                    </div>
+                    <p class="text-gray-800">${feedbackItem.feedback}</p>
+                `;
+                feedbackContainer.appendChild(newFeedback);
+            });
+        });
+    </script>
+</body>
+
+</html>

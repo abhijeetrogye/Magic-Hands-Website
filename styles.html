@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styles - Magic Hands</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        .navbar .brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+            padding-left: 10px;
+        }
+
+        .navbar .brand img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-left: auto;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                position: relative;
+            }
+
+            .navbar-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #333;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                z-index: 10;
+            }
+
+            .navbar-menu.active {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+
+            .navbar-menu li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar bg-gray-800 text-white py-4">
+        <div class="container mx-auto flex items-center">
+            <div class="brand">
+                <img src="logo.jpeg" alt="Magic Hands Logo">
+                <h2 class="text-lg font-semibold">Magic Hands</h2>
+            </div>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                &#9776;
+            </div>
+            <ul class="navbar-menu flex space-x-4" id="navbarMenu">
+                <li><a href="index.html" class="text-gray-300">Home</a></li>
+                <li><a href="appointment.html" class="text-gray-300">Appointment</a></li>
+                <li><a href="styles.html" class="text-gray-300">Styles</a></li>
+                <li><a href="connect.html" class="text-gray-300">Contact</a></li>
+                <li><a href="prices.html" class="text-gray-300">Prices</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container mx-auto my-8">
+        <h2 class="text-2xl font-semibold mb-4">‎ Our Styles</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="bg-white shadow-md rounded overflow-hidden">
+                <img src="1.jpeg" alt="Style 1" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Bridal Mehndi</h3>
+                    <p class="text-gray-600"> Elaborate and intricate henna designs applied on the hands and feet of the bride before her wedding day in South Asian cultures, symbolizing joy, beauty, and auspiciousness.</p>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded overflow-hidden">
+                <img src="2.jpeg" alt="Style 2" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Arabic Mehndi</h3>
+                    <p class="text-gray-600"> Characterized by bold, floral designs with larger empty spaces, typically applied using thick lines. It originated in Arabic countries and is known for its simplicity and elegance</p>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded overflow-hidden">
+                <img src="3.jpeg" alt="Style 3" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Indo-Arabic</h3>
+                    <p class="text-gray-600">A blend of Indian and Arabic styles, featuring bold outlines and intricate fillings, often incorporating peacock motifs, paisleys, and geometric patterns.</p>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded overflow-hidden">
+                <img src="4.jpeg" alt="Style 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">Indian Mehndi</h3>
+                    <p class="text-gray-600">Known for its detailed and intricate designs covering the entire hands, forearms, feet, and shins. It includes motifs like paisleys, flowers, intricate lines, and dots, often extending up the arms and legs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navbarMenu = document.getElementById('navbarMenu');
+            navbarMenu.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
