@@ -24,7 +24,7 @@ Magic Hands is a beautifully designed, responsive website showcasing the experti
 
 1. Clone the repository: 
     ```bash
-    git clone https://github.com/abhijeetrogye/magic-hands.git
+    git clone https://github.com/abhijeetrogye/Magic-Hands-Website
     ```
 2. Open `index.html` in your preferred web browser to view the website.
 
